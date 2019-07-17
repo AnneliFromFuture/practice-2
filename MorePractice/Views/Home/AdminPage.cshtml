@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Модерация";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Режим модерации</h2>
+
+<div class="widget">
+    <h3 class="widget-title">Категории</h3>
+    <ul class="widget-list">
+        <li>@Html.ActionLink("Клиенты", "List", "Clients")</li>
+        <li>@Html.ActionLink("Питомцы", "Index", "Pets")</li>
+        <li>@Html.ActionLink("Врачи", "Index", "Doctors")</li>
+        <li>@Html.ActionLink("Записи", "RecList", "Receptions")</li>
+        <li>@Html.ActionLink("Ветеринарные клиники", "Index", "VetClinics")</li>
+    </ul>
+</div>

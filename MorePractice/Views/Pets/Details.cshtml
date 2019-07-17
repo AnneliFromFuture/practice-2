@@ -1,0 +1,57 @@
+﻿@model MorePractice.Pet
+
+@{
+    ViewBag.Title = "Детали";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>Питомец</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Кличка")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Дата рождения")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Статус обслуживания")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsServiced)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Род")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Species.Kind.PetKind)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Порода")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Species.PetSpecies)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.ID })
+</p>

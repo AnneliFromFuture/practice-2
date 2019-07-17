@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MorePractice.Service>
+
+@{
+    ViewBag.Title = "Список услуг";
+}
+
+<h2>Список услуг</h2>
+
+<p>
+    @Html.ActionLink("Добавить услугу", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Услуга")
+        </th>
+        <th>
+            @Html.DisplayName("Стоимость")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PetService)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Детали", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+

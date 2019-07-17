@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MorePractice.Species>
+
+@{
+    ViewBag.Title = "Список пород";
+}
+
+<h2>Список пород</h2>
+
+<p>
+    @Html.ActionLink("Добавить породу", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Порода")
+        </th>
+        <th>
+            @Html.DisplayName("Род")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PetSpecies)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kind.PetKind)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Детали", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

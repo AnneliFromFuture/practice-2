@@ -1,0 +1,65 @@
+﻿@model MorePractice.Doctor
+
+@{
+    ViewBag.Title = "Удаление доктора";
+}
+
+<h2>Удаление доктора</h2>
+
+<h3>Вы уверены, что хотите удалить доктора?</h3>
+<div>
+    <h4>Доктор</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Имя")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Фамилия")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Отчество")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fathername)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Клиника")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VetClinic.Clinic)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Специализация")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Specializ.Specialization)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Назад к списку", "Index")
+        </div>
+    }
+</div>

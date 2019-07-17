@@ -1,0 +1,70 @@
+﻿@model IEnumerable<MorePractice.Doctor>
+
+@{
+    ViewBag.Title = "Список докторов";
+}
+
+<h2>Список докторов</h2>
+
+<p>
+    @Html.ActionLink("Добавить доктора", "Create")
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayName("Фамилия")
+        </th>
+        <th>
+            @Html.DisplayName("Имя")
+        </th>
+        <th>
+            @Html.DisplayName("Отчество")
+        </th>
+        <th>
+            @Html.DisplayName("Клиника")
+        </th>
+        <th>
+            @Html.DisplayName("Адрес клиники")
+        </th>
+        <th>
+            @Html.DisplayName("Специализация")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fathername)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VetClinic.Clinic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VetClinic.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Specializ.Specialization)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Детали", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="form-group">
+    <div class="col-md-offset-10">
+        @Html.ActionLink("Экспорт в Excel", "ExcelAdmin", "Doctors", new { @class = "btn btn-info" })
+    </div>
+</div>

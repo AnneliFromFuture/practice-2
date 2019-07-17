@@ -1,0 +1,41 @@
+﻿@model MorePractice.Kind
+
+@{
+    ViewBag.Title = "Удаление рода";
+}
+
+<h2>Удаление рода</h2>
+
+<h3>Вы уверены, что хотите удалить данный род из списка?</h3>
+<div>
+    <h4>Род</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Род")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PetKind)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.ID_Class)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID_Class)
+        </dd>*@
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Назад к списку родов", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,66 @@
+﻿@model MorePractice.Doctor
+
+@{
+    ViewBag.Title = "Детали";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>Доктор</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Имя")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Фамилия")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Отчество")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fathername)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Клиника")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VetClinic.Clinic)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Адрес клиники")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VetClinic.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Специализация")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Specializ.Specialization)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Назад к списку", "Index")
+</p>

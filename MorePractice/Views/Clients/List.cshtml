@@ -1,0 +1,81 @@
+﻿@model IEnumerable<MorePractice.Models.Client>
+
+@{
+    ViewBag.Title = "Клиенты";
+}
+
+<h2>Список клиентов</h2>
+<hr />
+<h4>Поиск по фамилии клиента</h4>
+
+@using (Html.BeginForm("List", "Clients", FormMethod.Get))
+{
+    <div class="form-inline form-group">
+        @Html.TextBox("searching", "", htmlAttributes: new { @class = "form-control" })
+        <input type="submit" value="Найти" class="btn btn-default" />
+    </div>
+}
+
+<h2></h2>
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayName("Имя")
+        </th>
+        <th>
+            @Html.DisplayName("Фамилия")
+        </th>
+        <th>
+            @Html.DisplayName("Отчество")
+        </th>
+        <th>
+            @Html.DisplayName("Дата рождения")
+        </th>
+        <th>
+            @Html.DisplayName("Номер телефона")
+        </th>
+        <th>
+            @Html.DisplayName("E-mail")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fathername)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Детали", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
+<div class="row">
+    <div class="col-md-2">
+        @Html.ActionLink("Добавить клиента", "Create")
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-10">
+            @Html.ActionLink("Экспорт в Excel", "Excel", "Clients", new { @class = "btn btn-info" })
+        </div>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.body-content nav {
+    background-color: aqua !important
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.widget {
+    padding: 20px 30px;
+    background: white;
+    font-family: Monaco;
+    background-color: transparent;
+}
+
+.widget-title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #222;
+    font-size: 16px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    border-left: 2px solid #b99d61;
+}
+
+.widget-list {
+    padding: 0;
+    list-style: none;
+}
+
+    .widget-list a:before {
+        content: "\2014";
+        margin-right: 14px;
+    }
+
+    .widget-list a {
+        text-decoration: none;
+        outline: none;
+        display: block;
+        padding: 6px 0;
+        font-size: 18px;
+        letter-spacing: 1px;
+        font-weight: 300;
+        color: #444;
+        transition: .3s linear;
+    }
+
+        .widget-list a:hover {
+            color: #b99d61;
+        }
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #faf6f6;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #d2b0b0;
+    border-color: #c8a0a0;
+}
+
+    .btn-info:focus,
+    .btn-info.focus {
+        color: #fff;
+        background-color: #dbc0c0;
+        border-color: #d2b0b0;
+    }
+
+    .btn-info:hover {
+        color: #fff;
+        background-color: #dbc0c0;
+        border-color: #d2b0b0;
+    }
+
+.btn-default {
+    color: #333;
+    background-color: #f3eaea;
+    border-color: #e7d5d5;
+}
+
+    .btn-default:focus,
+    .btn-default.focus {
+        color: #333;
+        background-color: #eddfdf;
+        border-color: #dbc0c0;
+    }
+
+    .btn-default:hover {
+        color: #333;
+        background-color: #eddfdf;
+        border-color: #dbc0c0;
+    }

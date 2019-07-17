@@ -1,0 +1,34 @@
+﻿@model MorePractice.Kind
+
+@{
+    ViewBag.Title = "Детали";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>Род питомца</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Род")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PetKind)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayName("Класс питомца")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Class.PetClass)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Назад к списку родов", "Index")
+</p>

@@ -1,0 +1,41 @@
+﻿@model MorePractice.VetClinic
+
+@{
+    ViewBag.Title = "Удаление клиники";
+}
+
+<h2>Удаление клиники</h2>
+
+<h3>Вы уверены, что хотите удалить данную клинику?</h3>
+<div>
+    <h4>Ветеринарная клиника</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Название клиники")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clinic)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Адрес")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Назад к списку клиник", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,78 @@
+﻿@using Microsoft.AspNet.Identity
+
+@model MorePractice.Reception
+
+@{
+    ViewBag.Title = "Детали";
+}
+
+<h2>Детали</h2>
+
+<div>
+    <h4>Запись к ветеринару</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Дата и время записи")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Уведомление по почте")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailNotification)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Питомец")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pet.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Услуга")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Service.PetService)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Стоимость услуги")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Service.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Доктор")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doctor.Surname)
+
+            @Html.DisplayFor(model => model.Doctor.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.ID }) |
+
+    @if (User.Identity.GetUserName() == "admin@mail.ru")
+    {
+        @Html.ActionLink("Назад к списку записей", "RecList");
+    }
+    else
+    {
+        @Html.ActionLink("Назад к списку записей", "Index");
+    }
+</p>

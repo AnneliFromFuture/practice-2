@@ -1,0 +1,41 @@
+﻿@model MorePractice.ServiceDoctor
+
+@{
+    ViewBag.Title = "Удаление связей";
+}
+
+<h2>Удаление связей</h2>
+
+<h3>Вы уверены, что хотите удалить эту связь?</h3>
+<div>
+    <h4>Доктор и услуга</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Услуга")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Service.PetService)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Доктор")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doctor.Surname)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Назат к списку", "Index")
+        </div>
+    }
+</div>

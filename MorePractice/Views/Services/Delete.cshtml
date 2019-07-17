@@ -1,0 +1,41 @@
+﻿@model MorePractice.Service
+
+@{
+    ViewBag.Title = "Удаление услуги";
+}
+
+<h2>Удаление услуги</h2>
+
+<h3>Вы уверены, что хотите удалить услугу??</h3>
+<div>
+    <h4>Service</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Услуга")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PetService)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Стоимость")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+     {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Назад к списку услуг", "Index")
+        </div>
+     }
+</div>

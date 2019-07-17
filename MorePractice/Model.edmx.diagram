@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="65fbe4c45b404a0eae9e54c6c41e8684" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Doctor" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Kind" Width="1.5" PointX="1.5" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Pet" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Reception" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Service" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.ServiceDoctor" Width="1.5" PointX="8.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Specializ" Width="1.5" PointX="0.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Species" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="7.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.VetClinic" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_Doctor_Specializ" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Doctor_VetClinic" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Reception_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ServiceDoctor_Doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Species_Kind" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Pet_Species" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Reception_Pet" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_Reception_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_ServiceDoctor_Service" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

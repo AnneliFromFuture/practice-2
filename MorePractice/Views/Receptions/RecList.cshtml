@@ -1,0 +1,74 @@
+﻿@model IEnumerable<MorePractice.Reception>
+
+@{
+    ViewBag.Title = "Список записей";
+}
+
+<h2>Список записей к ветеринарным врачам</h2>
+<h2></h2>
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayName("Дата и время записи")
+        </th>
+        <th>
+            @Html.DisplayName("Уведомление по почте")
+        </th>
+        <th>
+            @Html.DisplayName("Питомец")
+        </th>
+        <th>
+            @Html.DisplayName("Услуга")
+        </th>
+        <th>
+            @Html.DisplayName("Стоимость услуги")
+        </th>
+        <th>
+            @Html.DisplayName("Доктор")
+        </th>
+        <th>
+            @Html.DisplayName("")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailNotification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pet.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Service.PetService)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Service.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doctor.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Doctor.Name)
+            </td>
+            <td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Детали", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="form-group">
+    <div class="col-md-offset-10">
+        @Html.ActionLink("Экспорт в Excel", "Excel", "Receptions", new { @class = "btn btn-info" })
+    </div>
+</div>

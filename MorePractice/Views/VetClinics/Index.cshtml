@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MorePractice.VetClinic>
+
+@{
+    ViewBag.Title = "Список ветеринарных клиник";
+}
+
+<h2>Список ветеринарных клиник</h2>
+
+<p>
+    @Html.ActionLink("Добавить клинику", "Create")
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayName("Название клиники")
+        </th>
+        <th>
+            @Html.DisplayName("Адрес")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Clinic)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.ID }) |
+                @Html.ActionLink("Детали", "Details", new { id = item.ID }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<div class="form-group">
+    <div class="col-sm-offset-8">
+        @Html.ActionLink("Экспорт в Excel", "Excel", "VetClinics", new { @class = "btn btn-info" })
+    </div>
+</div>

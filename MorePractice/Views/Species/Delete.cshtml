@@ -1,0 +1,42 @@
+﻿@model MorePractice.Species
+
+@{
+    ViewBag.Title = "Удаление породы";
+}
+
+<h2>Удаление породы</h2>
+
+<h3>Вы уверены, что хотите удалить данную породу?</h3>
+<div>
+    <h4>Породы</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Порода")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PetSpecies)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Род")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kind.PetKind)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Назад к списку пород", "Index")
+        </div>
+    }
+</div>
+
